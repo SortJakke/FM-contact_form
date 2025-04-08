@@ -1,0 +1,295 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --BG-Body: hsl(148, 38%, 91%);
+  --Primary: hsl(0, 0%, 100%);
+  --Secundary: hsl(187, 24%, 22%);
+  --Details: hsl(186, 15%, 59%);
+  --Assets: hsl(169, 82%, 27%);
+  --Error: hsl(0, 66%, 54%);
+
+  --Font-Family: 400 16px "Karla", sans-serif;
+}
+
+/* geral */
+body {
+  background-color: var(--BG-Body);
+  color: var(--Secundary);
+  font: var(--Font-Family);
+
+  min-height: 100vh;
+  display: grid;
+  gap: 1em;
+  padding: 1em;
+  place-content: center;
+
+  position: relative;
+}
+img {
+  width: 100%;
+}
+
+/* sent message */
+.success-section {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  padding: 1em;
+  cursor: pointer;
+  z-index: 1000;
+}
+.success-content {
+  display: flex;
+  width: 100%;
+  max-width: calc(401px + 2em);
+  margin: auto;
+
+  flex-wrap: wrap;
+  gap: 0.5em;
+
+  background-color: var(--Secundary);
+  color: var(--Details);
+  padding: 1em;
+  border-radius: 0.7em;
+}
+.sent-heading {
+  color: var(--Primary);
+  font-weight: 700;
+}
+
+/* main card */
+.card {
+  background-color: var(--Primary);
+  border-radius: 1em;
+
+  width: 100%;
+  display: grid;
+  gap: 1.5em;
+  padding: 1.5em;
+}
+.card-heading {
+  font-size: 1.7em;
+  font-weight: 700;
+}
+
+/* form section */
+.form-section {
+  display: grid;
+  gap: 1.5em;
+}
+.text-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.form-input {
+  width: 100%;
+  border: none;
+  border-radius: 0.5em;
+  outline: 1px solid var(--Details);
+  padding: 0.8em 1em;
+
+  color: var(--Secundary);
+  font: var(--Font-Family);
+}
+.form-input:focus {
+  outline: 2px solid var(--Assets);
+}
+
+/* radio-section */
+.radio-section {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-top: 1em;
+}
+.radio-option {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+
+  border: none;
+  border-radius: 0.5em;
+  outline: 1px solid var(--Details);
+  padding: 0.8em 1em;
+  padding-left: 3em;
+
+  color: var(--Secundary);
+  font: var(--Font-Family);
+}
+.radio-option input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.radiomark {
+  position: absolute;
+  top: 50%;
+  left: 1em;
+  transform: translateY(-50%);
+
+  height: 20px;
+  width: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+}
+.radio-option:hover input ~ .radiomark {
+  background-color: #ccc;
+}
+.radio-option input:checked ~ .radiomark {
+  background-image: url(./images/icon-radio-selected.svg);
+  background-position: 0;
+  background-size: cover;
+  border: none;
+}
+.radio-option input:focus ~ .radiomark {
+  border: 2px solid var(--Assets);
+}
+.radio-option.selected {
+  outline: 2px solid var(--Assets);
+  background-color: var(--BG-Body);
+}
+
+/* message */
+.message-input {
+  width: 100% !important;
+  aspect-ratio: 1/0.6;
+
+  font: var(--Font-Family);
+  border: none;
+  border-radius: 0.5em;
+  outline: 1px solid var(--Details);
+  padding: 1em;
+  resize: none;
+}
+.message-input:focus {
+  outline: 2px solid var(--Assets);
+}
+
+/* checkbox */
+.checkbox-label {
+  display: block;
+  position: relative;
+  padding: 0.8em;
+  padding-left: 2em;
+  outline: none;
+  cursor: pointer;
+}
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+
+  height: 20px;
+  width: 20px;
+  border: 2px solid #ccc;
+}
+.checkbox-label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.checkbox-label input:focus ~ .checkmark {
+  border: 2px solid var(--Assets);
+}
+.checkbox-label input:checked ~ .checkmark {
+  background-image: url(./images/icon-checkbox-check.svg);
+  background-size: contain;
+  border: none;
+}
+
+/* submit */
+.submit-button {
+  background-color: var(--Assets);
+  font: var(--Font-Family);
+  color: var(--Primary);
+  padding: 0.8em;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+.submit-button:hover {
+  filter: brightness(50%);
+}
+.submit-button:focus {
+  outline: 2px solid var(--Secundary);
+}
+
+.hidden {
+  display: none;
+}
+
+.form-input.error,
+.message-input.error {
+  outline: 1px solid var(--Error);
+}
+.error-message {
+  color: var(--Error);
+}
+
+/* footer */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 750px) {
+  .card {
+    width: 700px;
+  }
+  .form-section {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "name surname"
+      "email email"
+      "query query"
+      "message message"
+      "assent assent"
+      "submit submit";
+    column-gap: 1em;
+  }
+  .first-name-section {
+    grid-area: name;
+  }
+  .surname-section {
+    grid-area: surname;
+  }
+  .email-section {
+    grid-area: email;
+  }
+  .radio-section {
+    grid-area: query;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .radio-option {
+      width: calc(50% - 0.5em);
+    }
+  }
+  .message-section {
+    grid-area: message;
+
+    .message-input {
+      height: 100px;
+    }
+  }
+  .checkbox-section {
+    grid-area: assent;
+  }
+  .submit-button {
+    grid-area: submit;
+  }
+}

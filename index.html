@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Contact form</title>
+
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div id="success" class="success-section hidden">
+      <div class="success-content">
+        <span class="success-message" aria-hidden="true">
+          <img src="./images/icon-success-check.svg" alt="success icon" />
+        </span>
+        <strong class="sent-heading">Message Sent!</strong>
+        <p class="thanks-message">
+          Thanks for completing the form. We'll be in touch soon!
+        </p>
+      </div>
+    </div>
+    <main class="card">
+      <h1 class="card-heading">Contact Us</h1>
+      <form class="form-section" id="form">
+        <div class="text-input first-name-section">
+          <label class="form-label" for="input-name">First Name *</label>
+          <input
+            class="form-input"
+            type="text"
+            name="name"
+            id="input-name"
+            autocomplete="given-name"
+          />
+          <span class="error-message hidden">This field is required</span>
+        </div>
+        <div class="text-input surname-section">
+          <label class="form-label" for="input-surname">Last Name *</label>
+          <input
+            class="form-input"
+            type="text"
+            name="surname"
+            id="input-surname"
+            autocomplete="family-name"
+          />
+          <span class="error-message hidden">This field is required</span>
+        </div>
+        <div class="text-input email-section">
+          <label class="form-label" for="input-email">Email Address *</label>
+          <input
+            class="form-input"
+            type="email"
+            name="email"
+            id="input-email"
+            autocomplete="email"
+          />
+          <span class="error-message hidden"
+            >Please enter a valid email address</span
+          >
+        </div>
+        <fieldset class="radio-section">
+          <legend class="fieldset-label">Query Type *</legend>
+          <label class="radio-option"
+            >General Enquiry
+            <input
+              type="radio"
+              name="q-type"
+              id="g-enquiry"
+              value="General Enquiry"
+            />
+            <span class="radiomark"></span>
+          </label>
+          <label class="radio-option"
+            >Support Request
+            <input
+              type="radio"
+              name="q-type"
+              id="s-request"
+              value="Support Request"
+            />
+            <span class="radiomark"></span>
+          </label>
+          <span id="radio-error" class="error-message hidden"
+            >Please select a query type</span
+          >
+        </fieldset>
+        <div class="text-input message-section">
+          <label for="message">Message *</label>
+          <textarea
+            class="message-input"
+            name="message"
+            id="message"
+          ></textarea>
+          <span class="error-message hidden">This field is required</span>
+        </div>
+        <div class="checkbox-section">
+          <label for="assent" class="checkbox-label">
+            <input type="checkbox" name="assent" id="assent" />
+            <span class="checkmark"></span>
+            I consent to being contacted by the team *
+          </label>
+          <span id="check-error" class="error-message hidden"
+            >To submit this form, please consent to being contacted</span
+          >
+        </div>
+        <button class="submit-button" type="submit">Submit</button>
+      </form>
+    </main>
+    <footer class="attribution">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        rel="noopener"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/SortJakke">Sortjakke</a>.
+    </footer>
+  </body>
+</html>
